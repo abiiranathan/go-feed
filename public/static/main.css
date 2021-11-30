@@ -1,0 +1,230 @@
+/* Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* style body with dark theme */
+body {
+  background-color: #1a1a1a;
+  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Display feed cards in grid container */
+.feed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 20px;
+  margin: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feed-card {
+  overflow: hidden;
+  border: 1px solid rgb(109, 105, 105);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  background-color: #302f2f;
+  /* add box shadow */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.5s ease;
+  animation: fadeInFromLeft 0.8s ease-in-out;
+}
+
+.feed-card.right {
+  animation: fadeInFromRight 0.8s ease-in-out;
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0.5;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Styles for our feed-card-title, description and link */
+.feed-image {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  object-position: center;
+  transition: 1s;
+}
+
+.feed-image:hover {
+  transform: scale(1.1);
+}
+
+.feed-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.feed-card-description {
+  font-size: 0.9rem;
+  margin-bottom: 0.5em;
+  color: #ccc;
+}
+
+.feed-card-link {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #8eb7f3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#header {
+  color: rgb(185, 179, 179);
+  padding: 5px 1rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#header h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+  color: #eee;
+}
+
+/* style form */
+#search_form {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* style or input */
+input {
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin: 10px;
+  width: 100%;
+  color: #363630;
+  flex-basis: 200px;
+  border: 2px solid #c1d7f6;
+  transition: 0.4s;
+  max-width: 100%;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #6793d4;
+}
+
+/* style button */
+.btn {
+  border: 1px solid #ccc;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  margin: 10px;
+  width: 6em;
+  cursor: pointer;
+  background-color: #302f2f;
+  color: #eee;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: #6793d4;
+}
+
+/* show a single col on mobile */
+@media screen and (max-width: 600px) {
+  .feed {
+    grid-template-columns: 1fr;
+  }
+
+  #header form {
+    flex-direction: grid;
+    grid-template-columns: 4fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  gap: 10px;
+}
+
+#newfeed {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #fff;
+  color: #1a1a1a;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(214, 209, 209, 0.5), 0 3px 12px rgba(154, 190, 184, 0.5);
+  padding: 0.5rem 2rem;
+}
+
+#newfeed h1 {
+  color: #6793d4;
+  font-family: sans-serif;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+#newfeed .fields {
+  max-width: 90%;
+}
+
+#newfeed .fields .row {
+  margin-bottom: 1rem;
+}
+
+#newfeed .fields input {
+  margin: 0;
+}
+
+#newfeed .btn {
+  background-color: #062e69;
+  color: rgb(231, 181, 87);
+  font-weight: 800;
+  text-transform: uppercase;
+  width: 160px;
+}
+
+#newfeed .btn:hover {
+  color: #062e69;
+  background-color: rgb(231, 181, 87);
+  font-weight: 800;
+  text-transform: uppercase;
+  width: 160px;
+}

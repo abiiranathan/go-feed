@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed | Latest news from around the world!</title>
+    <link rel="stylesheet" href="/public/static/main.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>News Hive</h1>
+        <form action="/" method="GET" id="search_form">
+            <input type="search" id="queryInput" name="query" placeholder="Search for news..." autocomplete="off">
+            <input type="submit" value="Search" class="btn" >
+        </form>
+        <h4>Stories to cheer you up daily!</h4>
+    </header>
+    <div class="feed"></div>
+
+    <div class="pagination">
+        <button class="btn" id="prev">Previous</button>
+        <p id="current_page"></p>
+        <button class="btn" id="next">Next</button>
+    </div>
+
+    <form action="/newfeed" method="post" id="newfeed">
+        <h1>Register a new feed item</h1>
+
+        <div class="fields">
+            <div class="row">
+                <label for="title">Title</label>
+                <input type="text" id="title" required maxlength="200" placeholder="Enter the title">
+            </div>
+            <div class="row">
+                <label for="description">Description</label>
+                <input type="text" id="description" required maxlength="250" placeholder="Enter the title">
+            </div>
+
+            <div class="row">
+                <label for="link">URL</label>
+                <input type="url" id="link" required  placeholder="Feed Url">
+            </div>
+            <div class="row">
+                <label for="image">Image Caption(Optional)</label>
+                <input type="url" id="image"  placeholder="Image Caption Url">
+            </div>
+
+            <div class="row">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="/public/static/script.js"></script>
+</body>
+
+</html>
